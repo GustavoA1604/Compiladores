@@ -5,17 +5,50 @@
 namespace mtd {
 
 std::string removeExtraSpaces(std::string str) {
-  return str.substr(str.find_first_not_of(" "), std::string::npos);
+  return str.substr(str.find_first_not_of(" \r\n"), std::string::npos);
 }
 
 std::string getElement(std::string& str) {
   str = removeExtraSpaces(str);
-  size_t firstSpaceAfterElement = str.find_first_of(" ");
+  size_t firstSpaceAfterElement = str.find_first_of(" \r\n");
   std::string element = str.substr(0, firstSpaceAfterElement);
   str = firstSpaceAfterElement != std::string::npos 
     ? str.substr(firstSpaceAfterElement, std::string::npos)
     : "";
   return element;
+}
+
+int getNumberOfOperandsPerCommand(commandT cmd) {
+  switch (cmd) {
+    case CMD_ERROR:
+    case CMD_HALT:
+    case CMD_RET:
+    case CMD_END:
+      return 1;
+    case CMD_READ:
+    case CMD_WRITE:
+    case CMD_PUSH:
+    case CMD_POP:
+    case CMD_NOT:
+    case CMD_JUMP:
+    case CMD_JZ:
+    case CMD_JN:
+    case CMD_CALL:
+    case CMD_WORD:
+      return 2;
+    default:
+      return 3;
+  }
+}
+
+int getMemorySpacePerCommand(commandT cmd) {
+  switch (cmd) {
+    case CMD_WORD:
+    case CMD_END:
+      return 0;
+    default:
+      return getNumberOfOperandsPerCommand(cmd);
+  }
 }
 
 commandT getCommandType(std::string commandStr) {
@@ -71,55 +104,73 @@ int getCommandCode(commandT cmd) {
   }
 }
 
-std::string processLine(std::string line) {
+std::tuple<std::string, std::string> getLabelCmdAndArgs(std::string lineWOComments) {
+  size_t colon = lineWOComments.find(":");
+  bool hasLabel = colon != std::string::npos;
+
+  if (hasLabel) {
+    return std::make_tuple(removeExtraSpaces(lineWOComments.substr(0, colon)), 
+                           removeExtraSpaces(lineWOComments.substr(colon+1, std::string::npos)));
+  } else {
+    return std::make_tuple("", removeExtraSpaces(lineWOComments));
+  }
+}
+
+void processSymbolTable(std::string line, 
+                        std::unordered_map<std::string, int>& symbolTable, 
+                        int& currentPosition) {
+  std::string lineWOComments = line.substr(0, line.find(";"));
+  bool hasOnlySpaces = lineWOComments.find_first_not_of(" \r\n") == std::string::npos;
+
+  if (hasOnlySpaces)
+    return;
+  
+  std::string cmdAndArgs;
+  std::string label;
+  std::string command;
+  commandT cmd;
+  auto labelCmdAndArgsTuple = getLabelCmdAndArgs(lineWOComments);
+  label = std::get<0>(labelCmdAndArgsTuple);
+  cmdAndArgs = std::get<1>(labelCmdAndArgsTuple);
+  command = getElement(cmdAndArgs);
+  cmd = getCommandType(command);
+
+  if (label != "") {
+    symbolTable.insert(std::make_pair(label, currentPosition));
+  }
+  currentPosition += getMemorySpacePerCommand(cmd);
+}
+
+std::string processLine(std::string line,
+                        std::unordered_map<std::string, int>& symbolTable, 
+                        int& currentPosition) {
   std::cout << line << "\n";
   std::string lineWOComments = line.substr(0, line.find(";"));
-  bool hasOnlySpaces = lineWOComments.find_first_not_of(" ") == std::string::npos;
-  
+  bool hasOnlySpaces = lineWOComments.find_first_not_of(" \r\n") == std::string::npos;
+
   if (hasOnlySpaces)
     return "";
 
-  std::string lineWCmdAndArgs;
+  std::string cmdAndArgs;
   std::string label;
   std::string command;
   commandT cmd;
   std::string arg1;
   std::string arg2;
-  size_t colon = lineWOComments.find(":");
-  bool hasLabel = colon != std::string::npos;
+  auto labelCmdAndArgsTuple = getLabelCmdAndArgs(lineWOComments);
+  label = std::get<0>(labelCmdAndArgsTuple);
+  cmdAndArgs = std::get<1>(labelCmdAndArgsTuple);
 
-  if (hasLabel) {
-    label = removeExtraSpaces(lineWOComments.substr(0, colon));
-    lineWCmdAndArgs = removeExtraSpaces(lineWOComments.substr(colon+1, std::string::npos));
-  } else {
-    lineWCmdAndArgs = removeExtraSpaces(lineWOComments);
-  }
-
-  command = getElement(lineWCmdAndArgs);
+  command = getElement(cmdAndArgs);
   cmd = getCommandType(command);
-  switch (cmd) {
-    case CMD_ERROR:
-      std::cout << "Command " << command << " not supported" << std::endl;
-      return "";
-    case CMD_HALT:
-    case CMD_RET:
-    case CMD_END:
+  switch (getNumberOfOperandsPerCommand(cmd)) {
+    case 2:
+      arg1 = getElement(cmdAndArgs);
       break;
-    case CMD_READ:
-    case CMD_WRITE:
-    case CMD_PUSH:
-    case CMD_POP:
-    case CMD_NOT:
-    case CMD_JUMP:
-    case CMD_JZ:
-    case CMD_JN:
-    case CMD_CALL:
-    case CMD_WORD:
-      arg1 = getElement(lineWCmdAndArgs);
-      break;
+    case 3:
+      arg1 = getElement(cmdAndArgs);
+      arg2 = getElement(cmdAndArgs);
     default:
-      arg1 = getElement(lineWCmdAndArgs);
-      arg2 = getElement(lineWCmdAndArgs);
       break;
   }
 
@@ -177,8 +228,9 @@ std::string processLine(std::string line) {
   //std::cout << "label: \"" << label << "\" command: \"" 
   //<< command << "\" arg1: \"" << arg1 << "\" arg2: \"" << arg2 << "\"\n";
 
-  return (hasLabel ? label + ":" : "") + 
-  ((cmd == CMD_HALT || cmd == CMD_RET) ? command 
+  currentPosition += getMemorySpacePerCommand(cmd);
+  return ((label == "") ? "" : label + ":") + 
+  ((cmd == CMD_HALT || cmd == CMD_RET || cmd == CMD_END) ? command 
   : (arg2 == "" ? command + " " + arg1
     : command + " " + arg1 + " " + arg2)) + " ";
 }

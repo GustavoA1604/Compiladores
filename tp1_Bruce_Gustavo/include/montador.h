@@ -2,6 +2,8 @@
 #define MONTADOR_H
 
 #include <string>
+#include <unordered_map>
+#include <tuple>
 
 namespace mtd {
 
@@ -40,7 +42,11 @@ commandT getCommandType(std::string commandStr);
 
 int getCommandCode(commandT cmd);
 
-std::string processLine(std::string line);
+std::tuple<std::string, std::string> getLabelCmdAndArgs(std::string lineWOComments);
+
+void processSymbolTable(std::string line, std::unordered_map<std::string, int>& symbolTable, int& currentPosition);
+
+std::string processLine(std::string line, std::unordered_map<std::string, int>& symbolTable, int& currentPosition);
 
 }
 
