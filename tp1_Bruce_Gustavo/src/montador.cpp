@@ -211,10 +211,8 @@ std::string processLine(std::string line,
       codeStream << commandCode << " ";
       break;
     case CMD_LOAD:
-      codeStream << commandCode << " " << arg1Code << " " << (arg2Code - PCPosition) << " ";
-      break;
     case CMD_STORE:
-      codeStream << commandCode << " " << (arg1Code - PCPosition) << " " << arg2Code << " ";
+      codeStream << commandCode << " " << arg1Code << " " << (arg2Code - PCPosition) << " ";
       break;
     case CMD_READ:
     case CMD_WRITE:
