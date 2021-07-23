@@ -42,11 +42,13 @@ commandT getCommandType(std::string commandStr);
 
 int getCommandCode(commandT cmd);
 
+int getArgCode(std::string arg, std::unordered_map<std::string, int>& symbolTable);
+
 std::tuple<std::string, std::string> getLabelCmdAndArgs(std::string lineWOComments);
 
 void processSymbolTable(std::string line, std::unordered_map<std::string, int>& symbolTable, int& currentPosition);
 
-std::string processLine(std::string line, std::unordered_map<std::string, int>& symbolTable, int& currentPosition);
+std::string processLine(std::string line, std::unordered_map<std::string, int>& symbolTable, int& PCPosition);
 
 }
 

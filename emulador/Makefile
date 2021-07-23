@@ -12,8 +12,8 @@ OBJS_EMULADOR = $(patsubst %,build/%.o,$(basename $(SRCS_EMULADOR)))
 
 CC = gcc
 CXX = g++
-CCFLAGS = -Wall
-CXXFLAGS = -Wall -g
+CCFLAGS = -Wall -fPIE     # TODO: check why fPIE was needed
+CXXFLAGS = -Wall -g -fPIE # TODO: check why fPIE was needed
 CPPFLAGS = -Iinclude/ -std=c++11
 
 ###############################################################################

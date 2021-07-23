@@ -36,23 +36,22 @@ int main(int argc, char *argv[]) {
             mtd::processSymbolTable(line, symbolTable, currentPosition);
         }
         std::cout << "MV-EXE" << std::endl;
-        std::cout << currentPosition - initialPosition + 1 << " " << 
-                     initialPosition << " " << 
-                     APValue << " " << 
+        std::cout << currentPosition - initialPosition + 1 << " " <<
+                     initialPosition << " " <<
+                     APValue << " " <<
                      PCPosition << std::endl;
 
         for (auto it = symbolTable.begin(); it != symbolTable.end(); it++) {
-            std::cout << it->first << " " << it->second << std::endl;
+            // std::cout << it->first << " " << it->second << std::endl;
         }
-        
+
         file.clear();
         file.seekg(0, std::ios::beg);
-        currentPosition = initialPosition;
 
         while (std::getline(file, line)) {
-            commands += mtd::processLine(line, symbolTable, currentPosition);
+            commands += mtd::processLine(line, symbolTable, PCPosition);
         }
-        std::cout << commands << std::endl;
+        std::cout << commands << std::endl; // FIXME: there is an extra space at the end
         file.close();
     }
     return 0;

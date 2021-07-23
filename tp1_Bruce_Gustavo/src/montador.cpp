@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 
 #include "montador.h"
 
@@ -12,7 +13,7 @@ std::string getElement(std::string& str) {
   str = removeExtraSpaces(str);
   size_t firstSpaceAfterElement = str.find_first_of(" \r\n");
   std::string element = str.substr(0, firstSpaceAfterElement);
-  str = firstSpaceAfterElement != std::string::npos 
+  str = firstSpaceAfterElement != std::string::npos
     ? str.substr(firstSpaceAfterElement, std::string::npos)
     : "";
   return element;
@@ -100,8 +101,25 @@ int getCommandCode(commandT cmd) {
     case CMD_JN: return 18;
     case CMD_CALL: return 19;
     case CMD_RET: return 20;
-    default: return -1; 
+    default: return -1;
   }
+}
+
+int getArgCode(std::string arg,
+               std::unordered_map<std::string, int>& symbolTable) {
+
+  // get the code for the general registers
+  if (arg == "R0") return 0;
+  if (arg == "R1") return 1;
+  if (arg == "R2") return 2;
+  if (arg == "R3") return 3;
+
+  // get the code for labels
+  std::unordered_map<std::string, int>::iterator it = symbolTable.find(arg);
+  if (it != symbolTable.end()) return it->second;
+
+  // fallback
+  return -1;
 }
 
 std::tuple<std::string, std::string> getLabelCmdAndArgs(std::string lineWOComments) {
@@ -109,22 +127,22 @@ std::tuple<std::string, std::string> getLabelCmdAndArgs(std::string lineWOCommen
   bool hasLabel = colon != std::string::npos;
 
   if (hasLabel) {
-    return std::make_tuple(removeExtraSpaces(lineWOComments.substr(0, colon)), 
+    return std::make_tuple(removeExtraSpaces(lineWOComments.substr(0, colon)),
                            removeExtraSpaces(lineWOComments.substr(colon+1, std::string::npos)));
   } else {
     return std::make_tuple("", removeExtraSpaces(lineWOComments));
   }
 }
 
-void processSymbolTable(std::string line, 
-                        std::unordered_map<std::string, int>& symbolTable, 
+void processSymbolTable(std::string line,
+                        std::unordered_map<std::string, int>& symbolTable,
                         int& currentPosition) {
   std::string lineWOComments = line.substr(0, line.find(";"));
   bool hasOnlySpaces = lineWOComments.find_first_not_of(" \r\n") == std::string::npos;
 
   if (hasOnlySpaces)
     return;
-  
+
   std::string cmdAndArgs;
   std::string label;
   std::string command;
@@ -142,9 +160,9 @@ void processSymbolTable(std::string line,
 }
 
 std::string processLine(std::string line,
-                        std::unordered_map<std::string, int>& symbolTable, 
-                        int& currentPosition) {
-  std::cout << line << "\n";
+                        std::unordered_map<std::string, int>& symbolTable,
+                        int& PCPosition) {
+  // std::cout << line << "\n";
   std::string lineWOComments = line.substr(0, line.find(";"));
   bool hasOnlySpaces = lineWOComments.find_first_not_of(" \r\n") == std::string::npos;
 
@@ -154,13 +172,17 @@ std::string processLine(std::string line,
   std::string cmdAndArgs;
   std::string label;
   std::string command;
+  std::string commandCodeStr;
   commandT cmd;
   std::string arg1;
   std::string arg2;
+  int commandCode, arg1Code, arg2Code;
+  std::stringstream codeStream;
+
+  // parse the assembly line
   auto labelCmdAndArgsTuple = getLabelCmdAndArgs(lineWOComments);
   label = std::get<0>(labelCmdAndArgsTuple);
   cmdAndArgs = std::get<1>(labelCmdAndArgsTuple);
-
   command = getElement(cmdAndArgs);
   cmd = getCommandType(command);
   switch (getNumberOfOperandsPerCommand(cmd)) {
@@ -174,65 +196,56 @@ std::string processLine(std::string line,
       break;
   }
 
+  // get the respective codes
+  commandCode = getCommandCode(cmd);
+  arg1Code = getArgCode(arg1, symbolTable);
+  arg2Code = getArgCode(arg2, symbolTable);
+
+  // update the program counter
+  PCPosition += getMemorySpacePerCommand(cmd);
+
+  // build the code line
   switch (cmd) {
     case CMD_HALT:
+    case CMD_RET:
+      codeStream << commandCode << " ";
       break;
     case CMD_LOAD:
+      codeStream << commandCode << " " << arg1Code << " " << (arg2Code - PCPosition) << " ";
       break;
     case CMD_STORE:
+      codeStream << commandCode << " " << (arg1Code - PCPosition) << " " << arg2Code << " ";
       break;
     case CMD_READ:
-      break;
     case CMD_WRITE:
+    case CMD_PUSH:
+    case CMD_POP:
+    case CMD_NOT:
+      codeStream << commandCode << " " << arg1Code << " ";
       break;
     case CMD_COPY:
-      break;
-    case CMD_PUSH:
-      break;
-    case CMD_POP:
-      break;
     case CMD_ADD:
-      break;
     case CMD_SUB:
-      break;
     case CMD_MUL:
-      break;
     case CMD_DIV:
-      break;
     case CMD_MOD:
-      break;
     case CMD_AND:
-      break;
     case CMD_OR:
-      break;
-    case CMD_NOT:
+      codeStream << commandCode << " " << arg1Code << " " << arg2Code << " ";
       break;
     case CMD_JUMP:
-      break;
     case CMD_JZ:
-      break;
     case CMD_JN:
-      break;
     case CMD_CALL:
-      break;
-    case CMD_RET:
+      codeStream << commandCode << " " << (arg1Code - PCPosition) << " ";
       break;
     case CMD_WORD:
+      codeStream << arg1 << " "; // TODO: check if this is correct
       break;
     case CMD_END:
-      break; 
     default:
-      break; 
+      break;
   }
-
-  //std::cout << "label: \"" << label << "\" command: \"" 
-  //<< command << "\" arg1: \"" << arg1 << "\" arg2: \"" << arg2 << "\"\n";
-
-  currentPosition += getMemorySpacePerCommand(cmd);
-  return ((label == "") ? "" : label + ":") + 
-  ((cmd == CMD_HALT || cmd == CMD_RET || cmd == CMD_END) ? command 
-  : (arg2 == "" ? command + " " + arg1
-    : command + " " + arg1 + " " + arg2)) + " ";
+  return codeStream.str();
 }
-
 }
