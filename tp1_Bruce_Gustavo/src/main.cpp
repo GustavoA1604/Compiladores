@@ -51,8 +51,9 @@ int main(int argc, char *argv[]) {
         while (std::getline(file, line)) {
             commands += mtd::processLine(line, symbolTable, PCPosition);
         }
-        std::cout << commands << std::endl; // FIXME: there is an extra space at the end
-        file.close();
+        // removing an extra space at the end
+        commands.pop_back();
+        std::cout << commands << std::endl;
     }
     return 0;
 }
