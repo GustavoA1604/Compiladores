@@ -44,9 +44,10 @@ int getNumberOfOperandsPerCommand(commandT cmd) {
 
 int getMemorySpacePerCommand(commandT cmd) {
   switch (cmd) {
-    case CMD_WORD:
     case CMD_END:
       return 0;
+    case CMD_WORD:
+      return 1;
     default:
       return getNumberOfOperandsPerCommand(cmd);
   }
@@ -58,6 +59,7 @@ commandT getCommandType(std::string commandStr) {
   if (commandStr == "STORE") return CMD_STORE;
   if (commandStr == "READ") return CMD_READ;
   if (commandStr == "WRITE") return CMD_WRITE;
+  if (commandStr == "COPY") return CMD_COPY;
   if (commandStr == "PUSH") return CMD_PUSH;
   if (commandStr == "POP") return CMD_POP;
   if (commandStr == "ADD") return CMD_ADD;
@@ -201,8 +203,12 @@ std::string processLine(std::string line,
   arg1Code = getArgCode(arg1, symbolTable);
   arg2Code = getArgCode(arg2, symbolTable);
 
+  // std::cout << commandCode << " " << arg1Code << " " << (arg2Code) << " " << PCPosition << std::endl;
+
   // update the program counter
   PCPosition += getMemorySpacePerCommand(cmd);
+
+  // std::cout << PCPosition << std::endl;
 
   // build the code line
   switch (cmd) {

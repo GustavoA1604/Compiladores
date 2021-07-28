@@ -1,0 +1,1268 @@
+=============== Modo Verbose ===============
+Instrução = 3 0
+Estado após instrução:
+	PC = 102
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 2 0 330
+Estado após instrução:
+	PC = 105
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 3 0
+Estado após instrução:
+	PC = 107
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 2 0 326
+Estado após instrução:
+	PC = 110
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 3 0
+Estado após instrução:
+	PC = 112
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 2 0 322
+Estado após instrução:
+	PC = 115
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 3 0
+Estado após instrução:
+	PC = 117
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 2 0 318
+Estado após instrução:
+	PC = 120
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 3 0
+Estado após instrução:
+	PC = 122
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 5
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 2 0 314
+Estado após instrução:
+	PC = 125
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 5
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 1 0 307
+Estado após instrução:
+	PC = 128
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 0
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 1 1 305
+Estado após instrução:
+	PC = 131
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 2
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 134
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 1
+	R[2] = 0
+	R[3] = 0
+
+Instrução = 1 3 295
+Estado após instrução:
+	PC = 137
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 1
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 139
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 1
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 1 3 292
+Estado após instrução:
+	PC = 142
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 145
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 1
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 1 1 289
+Estado após instrução:
+	PC = 148
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 3
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 151
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 2
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 1 3 278
+Estado após instrução:
+	PC = 154
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 2
+	R[2] = 1
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 156
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 2
+	R[2] = 1
+	R[3] = -1
+
+Instrução = 1 3 275
+Estado após instrução:
+	PC = 159
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 2
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 162
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 2
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 1 1 273
+Estado após instrução:
+	PC = 165
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 4
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 168
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 3
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 1 3 261
+Estado após instrução:
+	PC = 171
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 3
+	R[2] = 2
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 173
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 3
+	R[2] = 2
+	R[3] = -1
+
+Instrução = 1 3 258
+Estado após instrução:
+	PC = 176
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 3
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 179
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 3
+	R[2] = 3
+	R[3] = 1
+
+Instrução = 1 1 257
+Estado após instrução:
+	PC = 182
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 5
+	R[2] = 3
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 185
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 4
+	R[2] = 3
+	R[3] = 1
+
+Instrução = 1 3 244
+Estado após instrução:
+	PC = 188
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 4
+	R[2] = 3
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 190
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 4
+	R[2] = 3
+	R[3] = -1
+
+Instrução = 1 3 241
+Estado após instrução:
+	PC = 193
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 4
+	R[2] = 3
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 196
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 4
+	R[2] = 4
+	R[3] = 1
+
+Instrução = 17 231
+Estado após instrução:
+	PC = 198
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 1
+	R[1] = 4
+	R[2] = 4
+	R[3] = 1
+
+Instrução = 1 0 235
+Estado após instrução:
+	PC = 201
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 4
+	R[2] = 4
+	R[3] = 1
+
+Instrução = 1 2 229
+Estado após instrução:
+	PC = 204
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 4
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 1 228
+Estado após instrução:
+	PC = 207
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 210
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 2
+	R[1] = -1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 3 219
+Estado após instrução:
+	PC = 213
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 2
+	R[1] = -1
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 218
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 2
+	R[1] = -1
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 221
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 2
+	R[1] = -1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 1 213
+Estado após instrução:
+	PC = 224
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 2
+	R[1] = 3
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 227
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 3 202
+Estado após instrução:
+	PC = 230
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 232
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 3 199
+Estado após instrução:
+	PC = 235
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 1
+	R[2] = -1
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 238
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 1 197
+Estado após instrução:
+	PC = 241
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 4
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 244
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 2
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 3 185
+Estado após instrução:
+	PC = 247
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 2
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 249
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 2
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 1 3 182
+Estado após instrução:
+	PC = 252
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 2
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 255
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 2
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 1 1 181
+Estado após instrução:
+	PC = 258
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 5
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 261
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 3
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 1 3 168
+Estado após instrução:
+	PC = 264
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 3
+	R[2] = 1
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 266
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 3
+	R[2] = 1
+	R[3] = -1
+
+Instrução = 1 3 165
+Estado após instrução:
+	PC = 269
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 3
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 272
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 3
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 17 155
+Estado após instrução:
+	PC = 274
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 2
+	R[1] = 3
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 1 0 160
+Estado após instrução:
+	PC = 277
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 3
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 1 2 153
+Estado após instrução:
+	PC = 280
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 3
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 1 152
+Estado após instrução:
+	PC = 283
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 286
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 3
+	R[1] = -2
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 3 143
+Estado após instrução:
+	PC = 289
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 3
+	R[1] = -2
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 294
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 3
+	R[1] = -2
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 297
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 3
+	R[1] = -2
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 1 137
+Estado após instrução:
+	PC = 300
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 3
+	R[1] = 3
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 303
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 0
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 3 126
+Estado após instrução:
+	PC = 306
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 0
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 308
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 0
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 3 123
+Estado após instrução:
+	PC = 311
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 0
+	R[2] = -1
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 314
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 0
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 1 121
+Estado após instrução:
+	PC = 317
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 4
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 320
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 3 109
+Estado após instrução:
+	PC = 323
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 1
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 325
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 1
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 1 3 106
+Estado após instrução:
+	PC = 328
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 331
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 1
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 1 1 105
+Estado após instrução:
+	PC = 334
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 5
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 337
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 2
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 1 3 92
+Estado após instrução:
+	PC = 340
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 2
+	R[2] = 1
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 342
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 2
+	R[2] = 1
+	R[3] = -1
+
+Instrução = 1 3 89
+Estado após instrução:
+	PC = 345
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 2
+	R[2] = 1
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 348
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 2
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 17 79
+Estado após instrução:
+	PC = 350
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 3
+	R[1] = 2
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 1 0 85
+Estado após instrução:
+	PC = 353
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 2
+	R[2] = 2
+	R[3] = 1
+
+Instrução = 1 2 77
+Estado após instrução:
+	PC = 356
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 2
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 1 76
+Estado após instrução:
+	PC = 359
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 362
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -3
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 1 3 67
+Estado após instrução:
+	PC = 365
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -3
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 370
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -3
+	R[2] = 0
+	R[3] = -1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 373
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -3
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 1 61
+Estado após instrução:
+	PC = 376
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = 3
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 379
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 3 50
+Estado após instrução:
+	PC = 382
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 387
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 390
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = -1
+	R[2] = -2
+	R[3] = -1
+
+Instrução = 1 1 45
+Estado após instrução:
+	PC = 393
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = 4
+	R[2] = -2
+	R[3] = -1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 396
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 0
+	R[2] = -2
+	R[3] = -1
+
+Instrução = 1 3 33
+Estado após instrução:
+	PC = 399
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 0
+	R[2] = -2
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 401
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 0
+	R[2] = -2
+	R[3] = -1
+
+Instrução = 1 3 30
+Estado após instrução:
+	PC = 404
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 0
+	R[2] = -2
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 407
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = 0
+	R[2] = -1
+	R[3] = 1
+
+Instrução = 1 1 29
+Estado após instrução:
+	PC = 410
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 1
+	R[0] = 4
+	R[1] = 5
+	R[2] = -1
+	R[3] = 1
+
+Instrução = 9 1 0
+Estado após instrução:
+	PC = 413
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = -1
+	R[3] = 1
+
+Instrução = 1 3 16
+Estado após instrução:
+	PC = 416
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 18 3
+Estado após instrução:
+	PC = 418
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = -1
+	R[3] = -1
+
+Instrução = 1 3 13
+Estado após instrução:
+	PC = 421
+	AP = 999
+	PEP[zero] = 0
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = -1
+	R[3] = 1
+
+Instrução = 8 2 3
+Estado após instrução:
+	PC = 424
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 17 3
+Estado após instrução:
+	PC = 429
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 4 0
+Estado após instrução:
+	PC = 431
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+
+Instrução = 0
+Estado após instrução:
+	PC = 432
+	AP = 999
+	PEP[zero] = 1
+	PEP[negativo] = 0
+	R[0] = 4
+	R[1] = 1
+	R[2] = 0
+	R[3] = 1
+============================================
+
+4

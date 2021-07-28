@@ -1,0 +1,48 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;; Programa que testa várias operações aritméticas e de bitwise ;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+LOAD R0 const10
+LOAD R1 const5
+
+COPY R2 R0
+ADD R2 R1
+WRITE R2
+
+COPY R2 R0
+SUB R2 R1
+WRITE R2
+
+COPY R2 R0
+SUB R2 R1
+WRITE R2
+
+COPY R2 R0
+MUL R2 R1
+WRITE R2
+
+COPY R2 R0
+DIV R2 R1
+WRITE R2
+
+COPY R2 R0
+MOD R2 R1
+WRITE R2
+
+COPY R2 R0
+AND R2 R1
+WRITE R2
+
+COPY R2 R0
+OR R2 R1
+WRITE R2
+
+COPY R2 R0
+NOT R2
+WRITE R2
+
+HALT
+
+const5: WORD 5
+const10: WORD 10
+END
