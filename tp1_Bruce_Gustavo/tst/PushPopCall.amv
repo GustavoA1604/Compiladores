@@ -1,9 +1,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;; Programa que testa várias operações aritméticas e de bitwise ;;;;;;;;;;;;;
+;;;;;;;;;;;;;; Programa que testa o uso da pilha e chamadas de funções ;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 LOAD R0 const1
-LOAD R1 const10 
+LOAD R1 const10
 PUSH R0
 CALL func1
 PUSH R1

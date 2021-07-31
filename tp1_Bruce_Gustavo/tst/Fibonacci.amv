@@ -18,7 +18,7 @@ JUMP calcula            ; Volta para calcular mais um termo
 imprime: WRITE R3       ; Imprime o resultado para N>1
 JUMP fim;               ; Pula para o fim
 imprimePrim: WRITE R2   ; Imprime o resultado para N=1
-fim: HALT               ; Finaliza a execução dod programa
+fim: HALT               ; Finaliza a execução do programa
 
 const1: WORD 1          ; Constante 1 para operações e para uso auxiliar
 END
