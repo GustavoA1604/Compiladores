@@ -11,8 +11,9 @@
 
         1. Renomeie o diretório "tp2_seuNOME/" com o seu respectivo nome.
 
-        2. Remova os arquivos de exemplo do diretório "src/" e "include/", e
-        coloque os arquivos do seu projeto no lugar.
+        2. Remova os arquivos de exemplo do diretórios "src/montador",
+        "src/ligador" e "include/", e coloque os arquivos do seu projeto no
+        lugar.
 
         3. Modifique o arquivo "Makefile" na parte indicada para adicionar os
         arquivos do seu projeto.
@@ -22,11 +23,11 @@
 
         $> make
 
-        seu projeto é compilado corretamente e um arquivo binário é gerado no
-        diretório "bin/", com o nome "ligador".
+        seu projeto é compilado corretamente e dois arquivo binários são
+        gerados no diretório "bin/", com o nome "montador" e "ligador".
 
-        5. Verifique se o binário gerado no diretório "bin/" é executado
-        corretamente.
+        5. Verifique se os binários gerados no diretório "bin/" são
+        executados corretamente.
 
         6. Insira o seu arquivo de documentação deste trabalho prático no
         diretório "doc/".
