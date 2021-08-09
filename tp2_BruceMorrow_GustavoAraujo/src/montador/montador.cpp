@@ -138,13 +138,16 @@ std::tuple<std::string, std::string> getLabelCmdAndArgs(std::string lineWOCommen
 
 void processSymbolTable(std::string line,
                         std::unordered_map<std::string, int>& symbolTable,
-                        int& currentPosition) {
+                        int& currentPosition,
+                        int& PCPosition) {
   std::string lineWOComments = line.substr(0, line.find(";"));
   bool hasOnlySpaces = lineWOComments.find_first_not_of(" \r\n") == std::string::npos;
 
   if (hasOnlySpaces)
     return;
 
+  static bool isFirst = true;
+  static bool hasStart = false;
   std::string cmdAndArgs;
   std::string label;
   std::string command;
@@ -159,6 +162,13 @@ void processSymbolTable(std::string line,
     symbolTable.insert(std::make_pair(label, currentPosition));
     std::cout << label << "\t" << currentPosition << std::endl;
   }
+
+  if (cmd != CMD_WORD && cmd != CMD_END && (isFirst || !hasStart)) {
+    PCPosition = currentPosition;
+    hasStart = true;
+  }
+  isFirst = false;
+
   currentPosition += getMemorySpacePerCommand(cmd);
 }
 
@@ -172,6 +182,7 @@ std::string processLine(std::string line,
   if (hasOnlySpaces)
     return "";
 
+  static bool reachedStart = false;
   std::string cmdAndArgs;
   std::string label;
   std::string command;
@@ -212,7 +223,14 @@ std::string processLine(std::string line,
   // std::cout << commandCode << " " << arg1Code << " " << (arg2Code) << " " << PCPosition << std::endl;
 
   // update the program counter
-  PCPosition += getMemorySpacePerCommand(cmd);
+  if (!reachedStart) {
+    if (cmd != CMD_WORD && cmd != CMD_END) {
+      PCPosition += getMemorySpacePerCommand(cmd);
+      reachedStart = true;
+    }
+  } else {
+      PCPosition += getMemorySpacePerCommand(cmd);
+  }
 
   // std::cout << PCPosition << std::endl;
 

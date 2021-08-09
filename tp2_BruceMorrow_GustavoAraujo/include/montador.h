@@ -46,7 +46,7 @@ int getArgCode(std::string arg, std::unordered_map<std::string, int>& symbolTabl
 
 std::tuple<std::string, std::string> getLabelCmdAndArgs(std::string lineWOComments);
 
-void processSymbolTable(std::string line, std::unordered_map<std::string, int>& symbolTable, int& currentPosition);
+void processSymbolTable(std::string line, std::unordered_map<std::string, int>& symbolTable, int& currentPosition, int& PCPosition);
 
 std::string processLine(std::string line, std::unordered_map<std::string, int>& symbolTable, int& PCPosition);
 

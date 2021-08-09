@@ -34,10 +34,10 @@ int main(int argc, char *argv[]) {
 
         std::cout << "SYMB-TABLE" << std::endl;
         while (std::getline(file, line)) {
-            mtd::processSymbolTable(line, symbolTable, currentPosition);
+            mtd::processSymbolTable(line, symbolTable, currentPosition, PCPosition);
         }
         std::cout << "\nMV-EXE" << std::endl;
-        std::cout << currentPosition - initialPosition + 1 << " " <<
+        std::cout << currentPosition - initialPosition + 1 << " " << // TODO: check why +1
                      initialPosition << " " <<
                      APValue << " " <<
                      PCPosition << std::endl;

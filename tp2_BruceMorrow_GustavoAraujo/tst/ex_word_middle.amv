@@ -1,0 +1,6 @@
+LOAD R0 A
+WRITE R0
+JUMP exit
+A: WORD 100
+exit: HALT
+END ; tinha esquecido do END antes
