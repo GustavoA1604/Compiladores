@@ -1,0 +1,20 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;; Programa que testa o uso da pilha e chamadas de funções ;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+LOAD R0 const1
+LOAD R1 const10
+PUSH R0
+CALL func1
+PUSH R1
+CALL func1
+HALT
+
+func1: POP R2
+WRITE R2
+RET
+HALT
+
+const1: WORD 1
+const10: WORD 10
+END

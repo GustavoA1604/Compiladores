@@ -1,0 +1,25 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;; Programa que lê um inteiro "N" e imprimi o N-ésimo número de Fibonacci ;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+READ R0                 ; Lê o inteiro N e armazena no registrador 0
+LOAD R1 const1          ; Carrega o inteiro 1 no registrador 1
+LOAD R2 const1          ; Carrega o inteiro 0 no registrador 2
+SUB R2 R1               ; Muda o valor de R2 para 0
+LOAD R3 const1          ; Carrega o inteiro 1 no registrador 3
+SUB R0 R1               ; Subtrai 1 de N
+JZ imprimePrim          ; Caso N=1
+calcula: SUB R0 R1      ; Conta um termo feito
+JZ imprime              ; Calculou o termo pedido
+STORE R3 const1         ; Guarda o último valor na posição de memória 0
+ADD R3 R2               ; Soma os dois termos anteriores no registrador 3
+LOAD R2 const1          ; Carrega o valor anterior no registrador 2
+JUMP calcula            ; Volta para calcular mais um termo
+imprime: WRITE R3       ; Imprime o resultado para N>1
+JUMP fim;               ; Pula para o fim
+imprimePrim: WRITE R2   ; Imprime o resultado para N=1
+fim: HALT               ; Finaliza a execução do programa
+
+const1: WORD 1          ; Constante 1 para operações e para uso auxiliar
+END
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
