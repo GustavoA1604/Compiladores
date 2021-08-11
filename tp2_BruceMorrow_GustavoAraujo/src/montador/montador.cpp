@@ -160,7 +160,7 @@ void processSymbolTable(std::string line,
 
   if (label != "") {
     symbolTable.insert(std::make_pair(label, currentPosition));
-    std::cout << label << "\t" << currentPosition << std::endl;
+    // std::cout << label << "\t" << currentPosition << std::endl;
   }
 
   if (cmd != CMD_WORD && cmd != CMD_END && (isFirst || !hasStart)) {
@@ -186,12 +186,11 @@ std::string processLine(std::string line,
   std::string cmdAndArgs;
   std::string label;
   std::string command;
-  std::string commandCodeStr;
   commandT cmd;
   std::string arg1;
   std::string arg2;
-  int commandCode, arg1Code, arg2Code;
-  std::string arg1CodeStr, arg2CodeStr;
+  int arg1Code, arg2Code;
+  std::string arg1CodeStr, arg2CodeStr, commandCode;
   std::stringstream codeStream;
 
   // parse the assembly line
@@ -218,7 +217,7 @@ std::string processLine(std::string line,
   }
 
   // get the respective codes
-  commandCode = getCommandCode(cmd);
+  commandCode = "#" + std::to_string(getCommandCode(cmd));
 
   // std::cout << commandCode << " " << arg1Code << " " << (arg2Code) << " " << PCPosition << std::endl;
 
@@ -242,11 +241,11 @@ std::string processLine(std::string line,
       break;
     case CMD_LOAD:
     case CMD_STORE:
-    codeStream << commandCode << " " << arg1CodeStr << " ";
+    codeStream << commandCode << " #" << arg1CodeStr << " ";
       if (arg2Code != -1) {
         codeStream << (arg2Code - PCPosition);
       } else {
-        codeStream << "(" << arg2CodeStr << " - " << PCPosition << ")";
+        codeStream << arg2CodeStr << "&" << PCPosition;
       }
       break;
     case CMD_READ:
@@ -254,7 +253,7 @@ std::string processLine(std::string line,
     case CMD_PUSH:
     case CMD_POP:
     case CMD_NOT:
-      codeStream << commandCode << " " << arg1CodeStr;
+      codeStream << commandCode << " #" << arg1CodeStr;
       break;
     case CMD_COPY:
     case CMD_ADD:
@@ -264,7 +263,7 @@ std::string processLine(std::string line,
     case CMD_MOD:
     case CMD_AND:
     case CMD_OR:
-      codeStream << commandCode << " " << arg1CodeStr << " " << arg2CodeStr;
+      codeStream << commandCode << " #" << arg1CodeStr << " #" << arg2CodeStr;
       break;
     case CMD_JUMP:
     case CMD_JZ:
@@ -274,11 +273,11 @@ std::string processLine(std::string line,
       if (arg1Code != -1) {
         codeStream << (arg1Code - PCPosition);
       } else {
-        codeStream << "(" << arg1CodeStr << " - " << PCPosition << ")";
+        codeStream << arg1CodeStr << "&" << PCPosition;
       }
       break;
     case CMD_WORD:
-      codeStream << arg1;
+      codeStream << "#" << arg1;
       break;
     case CMD_END:
     default:

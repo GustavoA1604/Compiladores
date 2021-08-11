@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
         std::string line;
         std::string commands;
         std::unordered_map<std::string, int> symbolTable;
-        int initialPosition = 1000;
+        int initialPosition = 1001;
         int currentPosition;
         int APValue = 999;
         int PCPosition = initialPosition;
@@ -32,19 +32,14 @@ int main(int argc, char *argv[]) {
         file.seekg(0, std::ios::beg);
         currentPosition = initialPosition;
 
-        std::cout << "SYMB-TABLE" << std::endl;
         while (std::getline(file, line)) {
             mtd::processSymbolTable(line, symbolTable, currentPosition, PCPosition);
         }
-        std::cout << "\nMV-EXE" << std::endl;
-        std::cout << currentPosition - initialPosition + 1 << " " << // TODO: check why +1
+        std::cout << "MV-EXE" << std::endl;
+        std::cout << currentPosition - initialPosition << " " << // TODO: check why +1
                      initialPosition << " " <<
                      APValue << " " <<
                      PCPosition << std::endl;
-
-        for (auto it = symbolTable.begin(); it != symbolTable.end(); it++) {
-            // std::cout << it->first << " " << it->second << std::endl;
-        }
 
         file.clear();
         file.seekg(0, std::ios::beg);
@@ -55,6 +50,11 @@ int main(int argc, char *argv[]) {
         // removing an extra space at the end
         commands.pop_back();
         std::cout << commands << std::endl;
+
+        std::cout << "\nSYMB-TABLE" << std::endl;
+        for (auto it = symbolTable.begin(); it != symbolTable.end(); it++) {
+            std::cout << it->first << " " << it->second << std::endl;
+        }
     }
     return 0;
 }
