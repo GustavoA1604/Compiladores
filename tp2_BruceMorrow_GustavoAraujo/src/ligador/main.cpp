@@ -70,20 +70,6 @@ int main(int argc, char *argv[]) {
         inputFiles[i].close();
     }
 
-    // for (auto it = symbolTable.begin(); it != symbolTable.end(); it++) {
-    //     // std::cout << it->first << " " << it->second << std::endl;
-    // }
-
-    // for (int i = 0; i < argc-1; i++) {
-    //     if (std::getline(inputFiles[i], line)) {
-    //         commands += lgd::processCommands(line, symbolTable, PCPosition);
-    //     } else {
-    //         std::cout << "Error: wrong file format, missing commands line" << std::endl;
-    //         return 6;
-    //     }
-    //     inputFiles[i].close();
-    // }
-
     auto it = symbolTable.find("main");
     if (it == symbolTable.end()) {
         std::cout << "Error: no label main found" << std::endl;
@@ -92,7 +78,7 @@ int main(int argc, char *argv[]) {
         PCPosition = it->second;
     }
 
-    std::cout << "\nMV-EXE" << std::endl;
+    std::cout << "MV-EXE" << std::endl;
     std::cout << currentPosition << " " <<
                 initialPosition << " " <<
                 APValue << " " <<
