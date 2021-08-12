@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
         std::string line;
         std::string commands;
         std::unordered_map<std::string, int> symbolTable;
-        int initialPosition = 1001;
+        int initialPosition = 1000;
         int currentPosition;
         int APValue = 999;
         int PCPosition = initialPosition;

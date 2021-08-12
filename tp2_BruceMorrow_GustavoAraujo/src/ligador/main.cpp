@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     std::string line;
     std::string commands;
     int programSize;
-    int initialPosition = 1001;
+    int initialPosition = 1000;
     int currentPosition = 0;
     int APValue = 999;
     int PCPosition = initialPosition;
@@ -49,11 +49,6 @@ int main(int argc, char *argv[]) {
 
             if (std::getline(inputFiles[i], line) && line.size()) {
                 lgd::appendToProgram(line, fullProgram, currentPosition);
-                // printing
-                for (auto i = fullProgram.begin(); i != fullProgram.end(); i++) {
-                    std::cout << *i << ' ';
-                }
-                std::cout << std::endl;
             } else {
                 std::cout << "Error: wrong file format, missing commands line" << std::endl;
                 return 5;
@@ -98,7 +93,7 @@ int main(int argc, char *argv[]) {
     }
 
     std::cout << "\nMV-EXE" << std::endl;
-    std::cout << programSize << " " <<
+    std::cout << currentPosition << " " <<
                 initialPosition << " " <<
                 APValue << " " <<
                 PCPosition << std::endl;

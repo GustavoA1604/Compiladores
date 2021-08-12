@@ -217,7 +217,7 @@ std::string processLine(std::string line,
   }
 
   // get the respective codes
-  commandCode = "#" + std::to_string(getCommandCode(cmd));
+  commandCode = std::to_string(getCommandCode(cmd));
 
   // std::cout << commandCode << " " << arg1Code << " " << (arg2Code) << " " << PCPosition << std::endl;
 
@@ -241,7 +241,7 @@ std::string processLine(std::string line,
       break;
     case CMD_LOAD:
     case CMD_STORE:
-    codeStream << commandCode << " #" << arg1CodeStr << " ";
+    codeStream << commandCode << " " << arg1CodeStr << " ";
       if (arg2Code != -1) {
         codeStream << (arg2Code - PCPosition);
       } else {
@@ -253,7 +253,7 @@ std::string processLine(std::string line,
     case CMD_PUSH:
     case CMD_POP:
     case CMD_NOT:
-      codeStream << commandCode << " #" << arg1CodeStr;
+      codeStream << commandCode << " " << arg1CodeStr;
       break;
     case CMD_COPY:
     case CMD_ADD:
@@ -263,7 +263,7 @@ std::string processLine(std::string line,
     case CMD_MOD:
     case CMD_AND:
     case CMD_OR:
-      codeStream << commandCode << " #" << arg1CodeStr << " #" << arg2CodeStr;
+      codeStream << commandCode << " " << arg1CodeStr << " " << arg2CodeStr;
       break;
     case CMD_JUMP:
     case CMD_JZ:
@@ -277,7 +277,7 @@ std::string processLine(std::string line,
       }
       break;
     case CMD_WORD:
-      codeStream << "#" << arg1;
+      codeStream << arg1;
       break;
     case CMD_END:
     default:

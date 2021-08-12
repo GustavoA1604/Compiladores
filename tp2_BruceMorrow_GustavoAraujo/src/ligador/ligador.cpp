@@ -37,10 +37,8 @@ void appendToProgram(std::string commandsLine, std::vector<std::string>& fullPro
   std::stringstream ss(commandsLine);
   std::string command;
   while (std::getline(ss, command, ' ')) {
-    if(command.rfind("#", 0) == 0) {
-      fullProgram.push_back(command.substr(1));
-    } else if (command.find("&") == std::string::npos) {
-      fullProgram.push_back(isNumber(command) ? std::to_string(std::stoi(command) + currentPosition) : command);
+    if (command.find("&") == std::string::npos) {
+      fullProgram.push_back(command);
     } else {
       std::stringstream ssAux(command);
       std::stringstream newCommand;
