@@ -1,0 +1,5 @@
+func1: POP R2
+WRITE R2
+RET
+HALT
+END

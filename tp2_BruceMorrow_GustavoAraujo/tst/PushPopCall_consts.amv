@@ -1,0 +1,3 @@
+const5: WORD 5
+const10: WORD 10
+END
