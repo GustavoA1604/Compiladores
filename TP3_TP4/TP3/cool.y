@@ -133,6 +133,10 @@ class_list
 	| class_list class	/* several classes */
 		{ $$ = append_Classes($1,single_Classes($2)); 
                   parse_results = $$; }
+  | class_list CLASS error feature_list '}' ';'
+    { yyerrok; $$ = $1; }
+  | class_list CLASS error feature_list ';'
+    { yyerrok; $$ = $1; }
 	;
 
 /* If no parent is specified, the class inherits from the Object class. */
@@ -143,8 +147,6 @@ class
 			      stringtable.add_string(curr_filename)); }
 	| CLASS TYPEID INHERITS TYPEID '{' feature_list '}' ';'
 		{ $$ = class_($2,$4,$6,stringtable.add_string(curr_filename)); }
-  | CLASS error ';'
-    { yyerrok; }
 	;
 
 /* Feature list may be empty, but no empty features in list. */
@@ -160,6 +162,8 @@ feature_list_1
     { $$ = single_Features($1); }
   | feature_list_1 feature  /* several features */
     { $$ = append_Features($1, single_Features($2)); } 
+  | feature_list_1 error ';'
+    { yyerrok; $$ = $1; }
   ;
 
 /* A feature is either an attribute or a method.*/
@@ -246,8 +250,12 @@ expression_comma_1
 expression_semicolon
   : expression ';' /* single expression with ';' */
     { $$ = single_Expressions($1); } 
+  | error ';'
+    { yyerrok; $$ = nil_Expressions(); }
   | expression_semicolon expression ';' /* several expressions with ';' */
     { $$ = append_Expressions($1, single_Expressions($2)); }
+  | expression_semicolon error ';'
+    { yyerrok; $$ = $1; }
   ;
 
 expression
@@ -268,6 +276,8 @@ expression
     { $$ = let($2, $4, no_expr(), $6); }
   | LET OBJECTID ':' TYPEID ASSIGN expression IN expression
     { $$ = let($2, $4, $6, $8); }
+  | LET error IN expression
+    { yyerrok; $$ = $4; }
   | CASE expression OF case_list ESAC
     { $$ = typcase($2, $4); }
   | NEW TYPEID { $$ = new_($2); }
