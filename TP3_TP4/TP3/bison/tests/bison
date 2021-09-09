@@ -1,0 +1,8 @@
+#! /bin/bash
+# tests/bison.  Generated from bison.in by configure.
+# Wrapper around a non installed bison to make it work as an installed one.
+
+# Use the shipped files, not those installed.
+BISON_PKGDATADIR='/home/brucemorrow/Documents/Faculdade/10_periodo/Compiladores/Trabalhos_praticos/Compiladores/TP3_TP4/TP3/bison/tests/../data'
+export BISON_PKGDATADIR
+exec $PREBISON '/home/brucemorrow/Documents/Faculdade/10_periodo/Compiladores/Trabalhos_praticos/Compiladores/TP3_TP4/TP3/bison/tests/.././src/bison' ${1+"$@"}

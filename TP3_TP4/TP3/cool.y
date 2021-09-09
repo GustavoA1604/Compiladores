@@ -109,6 +109,7 @@ All binary operations are left-associative, with the exception of assignment,
 which is right-associative, and the three comparison operations, which do not 
 associate */
 %right ASSIGN
+%prec LET
 %nonassoc NOT
 %nonassoc LE '<' '=' 
 %left '-' '+'

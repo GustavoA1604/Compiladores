@@ -1,10 +1,16 @@
 class A {
+  int_assigned : Int;
+
+  test() : Object {
+    { int_assigned <- 0; }
+  };
 };
 
 Class BB__ inherits A {
 };
 
-class C {
+class Main {
+  obj_A : A;
   int_unassigned : Int;
   bool_unassigned : Bool;
   str_unassigned : String;
@@ -20,16 +26,16 @@ class C {
     str_unassigned
   };
 
-  method_expression_semicolon() : Int {
+  method_expression_semicolon() : Object {
     {
       let new_variable : Int <- New Int in (new_variable + 1);
       int_assigned <- 1;
-      int_assigned_3 <- int_assigned_1 + int_assigned_2;
-      int_assigned_3 <- int_assigned_1 - int_assigned_2;
-      int_assigned_3 <- int_assigned_1 * int_assigned_3;
-      int_assigned_3 <- int_assigned_2 / int_assigned_1;
-      ~int_assigned;
-      int_assigned = not int_assigned_2;
+      int_assigned_3 <- int_assigned + int_assigned_2;
+      int_assigned_3 <- int_assigned - int_assigned_2;
+      int_assigned_3 <- int_assigned * int_assigned_3;
+      int_assigned_3 <- int_assigned_2 / int_assigned;
+      ~int_unassigned;
+      bool_unassigned = not bool_unassigned;
       int_assigned_3 <- if 3 < 4 then (3) else (4) fi;
       bool_assigned <- false;
       while (1 <= int_assigned_3) loop int_assigned_3 = int_assigned_3 - 1 pool;
@@ -38,13 +44,17 @@ class C {
       esac;
       case int_assigned_2 of
         int_assigned : Int => true;
-        int_assigned_3 : Int => false;
+        int_assigned_3 : Bool => false;
       esac;
-      int_assigned @ Int . test();
+      obj_A @ A.test();
     }
   };
 
-  method_call_other( x : Int ) : Int {
+  method_call_other( x : Int ) : Object {
     method_expression_semicolon()
+  };
+
+  main() : Object {
+    { method_call_other(10); }
   };
 };

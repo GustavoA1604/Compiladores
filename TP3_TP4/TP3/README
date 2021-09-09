@@ -135,3 +135,28 @@ Instruções
 ------8<------8<------8<------8<---corte arqui---8<------8<------8<------8<-----
 
 [Aqui começa sua documentação]
+
+Alunos:
+  Bruce Nunes Morrow - 2016111741
+  Gustavo Emanuel Faria Araujo - 2017002482
+  Thais Ávila Morato - 2017002636
+
+Para a implementação do analisador sintático, os seguintes não terminais foram
+criados: 
+  program
+  class_list
+  class
+  feature_list
+  feature_list_1
+  feature
+  attribute
+  method
+  formal_list
+  formal_list_1
+  formal
+  case_list
+  case
+  expression_semicolon
+  expression_comma
+  expression_comma_1
+  expression
