@@ -109,7 +109,7 @@ All binary operations are left-associative, with the exception of assignment,
 which is right-associative, and the three comparison operations, which do not 
 associate */
 %right ASSIGN
-%prec LET
+//%precedence LET
 %nonassoc NOT
 %nonassoc LE '<' '=' 
 %left '-' '+'
@@ -273,11 +273,11 @@ expression
     { $$ = loop($2, $4); }
   | '{' expression_semicolon '}'
     { $$ = block($2); }
-  | LET OBJECTID ':' TYPEID IN expression
+  | LET OBJECTID ':' TYPEID IN expression %prec LET
     { $$ = let($2, $4, no_expr(), $6); }
-  | LET OBJECTID ':' TYPEID ASSIGN expression IN expression
+  | LET OBJECTID ':' TYPEID ASSIGN expression IN expression %prec LET
     { $$ = let($2, $4, $6, $8); }
-  | LET error IN expression
+  | LET error IN expression %prec LET
     { yyerrok; $$ = $4; }
   | CASE expression OF case_list ESAC
     { $$ = typcase($2, $4); }
